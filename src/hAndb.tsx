@@ -24,7 +24,6 @@ export default function Game() {
             <input type="button" value="delete" onClick={() => setGuessNumber(guessNumber.slice( 0 , guessNumber.length -1 ))} />
             <br />
             <SubmitButtonJudge answer={answer} guessNumber={guessNumber} />
-            <a href="https://nakayou.vercel.app">作者のサイト</a>
             <br />
             <a href="https://github.com/NakaYou/HitAndBlowReact">コード</a>
         </div>
