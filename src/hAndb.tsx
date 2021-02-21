@@ -10,16 +10,16 @@ export default function Game() {
             <h3>Hit&Blow</h3>
             <p>↓５桁の数字を当ててね↓</p>
             <p>　{guessNumber}　</p>
-            <input type="button" value={0} onClick={() => setGuessNumber(guessNumber + "0")} />
-            <input type="button" value={1} onClick={() => setGuessNumber(guessNumber + "1")} />
-            <input type="button" value={2} onClick={() => setGuessNumber(guessNumber + "2")} />
-            <input type="button" value={3} onClick={() => setGuessNumber(guessNumber + "3")} />
-            <input type="button" value={4} onClick={() => setGuessNumber(guessNumber + "4")} />
-            <input type="button" value={5} onClick={() => setGuessNumber(guessNumber + "5")} />
-            <input type="button" value={6} onClick={() => setGuessNumber(guessNumber + "6")} />
-            <input type="button" value={7} onClick={() => setGuessNumber(guessNumber + "7")} />
-            <input type="button" value={8} onClick={() => setGuessNumber(guessNumber + "8")} />
-            <input type="button" value={9} onClick={() => setGuessNumber(guessNumber + "9")} />
+            <input type="button" value={0} onClick={() => setGuessNumber(maxinput(guessNumber,"0"))} />
+            <input type="button" value={1} onClick={() => setGuessNumber(maxinput(guessNumber,"1"))} />
+            <input type="button" value={2} onClick={() => setGuessNumber(maxinput(guessNumber,"2"))} />
+            <input type="button" value={3} onClick={() => setGuessNumber(maxinput(guessNumber,"3"))} />
+            <input type="button" value={4} onClick={() => setGuessNumber(maxinput(guessNumber,"4"))} />
+            <input type="button" value={5} onClick={() => setGuessNumber(maxinput(guessNumber,"5"))} />
+            <input type="button" value={6} onClick={() => setGuessNumber(maxinput(guessNumber,"6"))} />
+            <input type="button" value={7} onClick={() => setGuessNumber(maxinput(guessNumber,"7"))} />
+            <input type="button" value={8} onClick={() => setGuessNumber(maxinput(guessNumber,"8"))} />
+            <input type="button" value={9} onClick={() => setGuessNumber(maxinput(guessNumber,"9"))} />
             <input type="button" value="clear" onClick={() => setGuessNumber("")} />
             <input type="button" value="delete" onClick={() => setGuessNumber(guessNumber.slice( 0 , guessNumber.length -1 ))} />
             <br />
@@ -67,4 +67,13 @@ function makeAnswer(random: number): string {
         stringAnswer = "0" + stringAnswer;
     }
     return stringAnswer;
+}
+
+function maxinput(guessNumber:string,number:string):string{
+    if(guessNumber.length===5){
+        return guessNumber;
+    }
+    else{
+        return guessNumber + number;
+    }
 }
