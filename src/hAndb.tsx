@@ -52,7 +52,7 @@ export function SubmitButtonJudge(props: any) {
     }
     return (
         <>
-            <input type="button" name="submit" value="submit!" onClick={() => { changePlayer(!player); setHit(h); setBlow(b);setText("プレイヤー"+playerturn+"のターンです") }} />
+            <input type="button" name="submit" value="submit!" onClick={()=>{if(props.guessNumber.length===5){ changePlayer(!player); setHit(h); setBlow(b);setText("プレイヤー"+playerturn+"のターンです") }else{alert("5桁の数字を入力してください")}}} />
             <br />
             <h3>Hit:{hit} Blow:{blow}</h3>
             <p>{hit===5?"プレイヤー"+playerturn+"の勝利です":text}</p>
